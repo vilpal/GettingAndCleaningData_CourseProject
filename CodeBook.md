@@ -6,7 +6,61 @@ This is a code book that describes the variables, the data, and any transformati
 
 Original data was obtained from: 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+
+
+##Transformations performed to clean up the data
+
+Objective of the tranformations is to
+
+ 1)  Merge the training and the test sets to create one data set
+
+ 2)  Extract the measurements on the mean and standard deviation for each measurement. 
+
+ 3)  Convert activity codes to descriptive activity names 
+
+ 4)  Label the data set with descriptive variable names. 
+
+ 5)  From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+Procedure:
+
+Using 'run_analysis.R' load files :
+
+	- features.txt
+
+	- activity_labels.txt
+
+	- train/X_train.txt
+
+	- train/y_train.txt
+
+	- train/subject_train.txt
+
+	- test/X_test.txt
+
+	- test/y_test.txt
+
+	- test/subject_test.txt
+
+into R-studio script each into separate data.frame object.
+
+Transform activity codes (in files y_train.txt and y_test.txt) to descriptive name using function 'DescriptiveActivityName'. Descriptive names are contained in file 'activity_labels.txt'.
+
+Append subject numbers (contained in files subject_train.txt and subject_test.txt) and activity names to data sets containing the observations (files X_train.txt and X_test.txt, this is done separately for test and training data).
+
+Give names to the columns of the data set (this is done separately for test and training data).
+
+Select only activity, subject and columns containing measurements on the mean and standard deviation for each measurement (this is done separately for test and training data).
+
+Append Train data to test data.
+
+Use dplyr package's group_by and summarise_each functions to create an independent tidy data set with the average of each variable for each activity and each subject.
+
+Finally, write tidy data set to a file to current working directory.
+
+
 
 ##Original Data Set Information
 ==================================================================
@@ -80,53 +134,3 @@ This dataset is distributed AS-IS and no responsibility implied or explicit can 
 
 Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
 
-
-##Transformations performed to clean up the data
-
-Objective of the tranformations is to
-
- 1)  Merge the training and the test sets to create one data set
-
- 2)  Extract the measurements on the mean and standard deviation for each measurement. 
-
- 3)  Convert activity codes to descriptive activity names 
-
- 4)  Label the data set with descriptive variable names. 
-
- 5)  From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-Procedure:
-
-Using 'run_analysis.R' load files :
-
-	- features.txt
-
-	- activity_labels.txt
-
-	- train/X_train.txt
-
-	- train/y_train.txt
-
-	- train/subject_train.txt
-
-	- test/X_test.txt
-
-	- test/y_test.txt
-
-	- test/subject_test.txt
-
-into R-studio script each into separate data.frame object.
-
-Transform activity codes (in files y_train.txt and y_test.txt) to descriptive name using function 'DescriptiveActivityName'. Descriptive names are contained in file 'activity_labels.txt'.
-
-Append subject numbers (contained in files subject_train.txt and subject_test.txt) and activity names to data sets containing the observations (files X_train.txt and X_test.txt, this is done separately for test and training data).
-
-Give names to the columns of the data set (this is done separately for test and training data).
-
-Select only activity, subject and columns containing measurements on the mean and standard deviation for each measurement (this is done separately for test and training data).
-
-Append Train data to test data.
-
-Use dplyr package's group_by and summarise_each functions to create an independent tidy data set with the average of each variable for each activity and each subject.
-
-Finally, write tidy data set to a file to current working directory.

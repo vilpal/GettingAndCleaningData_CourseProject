@@ -44,19 +44,19 @@ Using 'run_analysis.R' load files :
 
 	- test/subject_test.txt
 
-into R-studio script each into separate data.frame object.
+into R-studio, each into separate data.frame object.
 
-Transform activity codes (in files y_train.txt and y_test.txt) to descriptive name using function 'DescriptiveActivityName'. Descriptive names are contained in file 'activity_labels.txt'.
+Transform activity codes (contained in files y_train.txt and y_test.txt) to descriptive names using function 'DescriptiveActivityName'. Descriptive names are contained in file 'activity_labels.txt'.
 
-Append subject numbers (contained in files subject_train.txt and subject_test.txt) and activity names to data sets containing the observations (files X_train.txt and X_test.txt, this is done separately for test and training data).
+Append subject numbers (contained in files subject_train.txt and subject_test.txt) and activity names (tranformed in previous step) to data sets containing the observations (files X_train.txt and X_test.txt, this is done separately for test and training data).
 
 Give names to the columns of the data set (this is done separately for test and training data).
 
-Select only activity, subject and columns containing measurements on the mean and standard deviation for each measurement (this is done separately for test and training data).
+Select only columns 'activity', 'subject' and columns containing measurements on the mean and standard deviation for each measurement (this is done separately for test and training data).
 
-Append Train data to test data.
+Append train data to test data.
 
-Use dplyr package's group_by and summarise_each functions to create an independent tidy data set with the average of each variable for each activity and each subject.
+Use dplyr package's 'group_by' and 'summarise_each' functions to create an independent tidy data set with the average of each variable for each activity and each subject.
 
 Finally, write tidy data set to a file to current working directory.
 

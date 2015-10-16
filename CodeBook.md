@@ -62,7 +62,7 @@ Finally, write tidy data set to a file to current working directory.
 
 ###Variables and summaries calculated
 
-Tidy data set contains average of the variable for each activity and each subject for the following variables:
+The tidy data set contains averages of the variables for each activity and each subject for the following variables:
 
 fBodyAccJerk-mean()-X
 

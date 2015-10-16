@@ -7,7 +7,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 2) copy 'run_analysis.R' into folder 'UCI HAR Dataset'.
 
-3) open R-Studio and open script file 'run_analysis.R'. Change the working directory path in script file on line 16 to match your configuration. 
+3) open R-Studio and open script file 'run_analysis.R'. Change the working directory path in script file on line 16 to match your configuration (i.e. the path of folder 'UCI HAR Dataset'). 
 
 4) run the script to perform the data transformation (select code with crtl+A and then run it with crtl+R). As a result 'tidyData.txt' file will be generated to your working directory.
 

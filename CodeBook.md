@@ -24,7 +24,7 @@ Objective of the tranformations is to
 
  5)  From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-Procedure:
+#Procedure:
 
 Using 'run_analysis.R' load files :
 

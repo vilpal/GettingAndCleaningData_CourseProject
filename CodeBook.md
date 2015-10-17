@@ -12,7 +12,7 @@ Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ort
 
 ##Transformations performed to clean up the data
 
-Objective of the tranformations is to
+Objective of the tranformation is to
 
  1)  Merge the training and the test sets to create one data set
 

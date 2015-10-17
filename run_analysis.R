@@ -5,16 +5,6 @@
 install.packages("dplyr")
 library(dplyr)
 
-##Check the working directory
-getwd()
-
-##The code assumes that this script is in the folder "UCI HAR Dataset"
-##In folder "UCI HAR Dataset" you should have 
-##files "activity_labels.txt", "features.txt"
-##and subfolders "test" and "train"
-##Change working directory to directory where you have folder "UCI HAR Dataset"
-setwd("C:/R/Coursera/UCI HAR Dataset")
-
 ##read activity labels file
 activity_labels<-read.table("activity_labels.txt")
 

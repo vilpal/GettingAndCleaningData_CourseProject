@@ -26,7 +26,7 @@ Objective of the tranformations is to
 
 ###Procedure:
 
-Using 'run_analysis.R' load files :
+'run_analysis.R' script loads files :
 
 	- features.txt
 
@@ -46,23 +46,28 @@ Using 'run_analysis.R' load files :
 
 into R-studio, each into separate data.frame object.
 
-Transform activity codes (contained in files y_train.txt and y_test.txt) to descriptive names using function 'DescriptiveActivityName'. Descriptive names are contained in file 'activity_labels.txt'.
+Activity codes  (contained in files y_train.txt and y_test.txt) are transformed to descriptive names using function 'DescriptiveActivityName'. Descriptive names are contained in file 'activity_labels.txt'.
 
-Append subject numbers (contained in files subject_train.txt and subject_test.txt) and activity names (tranformed in previous step) to data sets containing the observations (files X_train.txt and X_test.txt, this is done separately for test and training data).
+Subject numbers (contained in files subject_train.txt and subject_test.txt) and activity names (tranformed in previous step) are appended to data sets containing the observations (files X_train.txt and X_test.txt, this is done separately for test and training data).
 
-Give names to the columns of the data set (this is done separately for test and training data).
+Names are assigned to the columns of the data set (this is done separately for test and training data).
 
-Select only columns 'activity', 'subject' and columns containing measurements on the mean and standard deviation for each measurement (this is done separately for test and training data).
+Script selects only columns 'activity', 'subject' and columns containing measurements on the mean and standard deviation for each measurement (this is done separately for test and training data).
 
-Append train data to test data.
+Script appends train data to test data using rbind().
 
-Use dplyr package's 'group_by' and 'summarise_each' functions to create an independent tidy data set with the average of each variable for each activity and each subject.
+dplyr package's 'group_by' and 'summarise_each' functions are used to create an independent tidy data set with the average of each variable for each activity and each subject.
 
-Finally, write tidy data set to a file to current working directory.
+Finally, script writes tidy data set to a file to current working directory.
 
 ###Variables and summaries calculated
 
-The tidy data set contains averages of the variables for each activity and each subject for the following variables:
+Tidy data set contains 180 rows and 68 columns. 
+
+Columns represent variable means.
+Rows represent activity-subject combinations (i.e. activities WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING. and subjects 1 to 30).
+
+The tidy data set contains averages of the variables for each activity and each subject for the following variables of the original dataset:
 
 fBodyAccJerk-mean()-X
 
@@ -201,4 +206,4 @@ tGravityAcc-std()-Z
 ###Units
 
 The measurements were normalized and bounded within range [-1,1] in the original data. 
-Units are preserved in this transformation.
+
